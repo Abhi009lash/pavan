@@ -11,14 +11,12 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Configure Nodemailer Transporter
-const createTransporter = async () => {
-  if (
-    process.env.SMTP_USER &&
-    process.env.SMTP_PASS &&
-    process.env.SMTP_PASS.trim() !== ''
-  ) {
-    console.log(`📧 SMTP configured for: ${process.env.SMTP_USER}`);
+const getTransporter = async () => {
+  dotenv.config(); // ensure latest .env values
+  const smtpPass = process.env.SMTP_PASS ? process.env.SMTP_PASS.trim() : '';
+
+  if (process.env.SMTP_USER && smtpPass !== '') {
+    console.log(`📧 Using real SMTP for: ${process.env.SMTP_USER}`);
     return nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587', 10),
@@ -30,24 +28,27 @@ const createTransporter = async () => {
     });
   }
 
-  // Fallback Ethereal test transport for local development without credentials
   console.log('⚠️  SMTP_PASS is empty in .env. Creating Nodemailer Ethereal sandbox account...');
-  const testAccount = await nodemailer.createTestAccount();
-  return nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
-    auth: {
-      user: testAccount.user,
-      pass: testAccount.pass,
-    },
-  });
+  try {
+    const testAccount = await nodemailer.createTestAccount();
+    return nodemailer.createTransport({
+      host: 'smtp.ethereal.email',
+      port: 587,
+      secure: false,
+      auth: {
+        user: testAccount.user,
+        pass: testAccount.pass,
+      },
+    });
+  } catch (err) {
+    console.error('Failed to create Ethereal test account:', err.message);
+    return null;
+  }
 };
-
-let transporterPromise = createTransporter();
 
 // Contact Form Email Submission Endpoint
 app.post('/api/contact', async (req, res) => {
+  console.log('📩 Received contact form submission:', req.body);
   const { name, mobile, comment } = req.body;
 
   if (!name || !mobile || !comment) {
@@ -57,7 +58,7 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-    const transporter = await transporterPromise;
+    const transporter = await getTransporter();
 
     const recipientEmail = process.env.CONTACT_DEST_EMAIL || 'pavan.dsgn@gmail.com';
     const senderEmail = process.env.SMTP_USER || 'portfolio-contact@pavanportfolio.com';
@@ -110,6 +111,15 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🚀 Nodemailer Contact API server running at http://localhost:${PORT}`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`❌ Port ${PORT} is already in use. Please kill the process using port ${PORT} or change PORT in .env.`);
+  } else {
+    console.error('❌ Express Server Error:', err);
+  }
+  process.exit(1);
 });
