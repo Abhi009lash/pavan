@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1E" />
+      <stop offset="100%" stop-color="#0B0B0D" />
+    </linearGradient>
+
+    <!-- UI Accent Gradients -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#F9C949" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#8A38F5" />
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Base Container -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+
+  <!-- UI Window Frame -->
+  <rect x="72" y="88" width="368" height="336" rx="28" fill="#141417" stroke="#2D2D35" stroke-width="8" filter="url(#shadow)" />
+
+  <!-- Window Header Controls -->
+  <circle cx="116" cy="124" r="10" fill="#FF5F56" />
+  <circle cx="148" cy="124" r="10" fill="#FFBD2E" />
+  <circle cx="180" cy="124" r="10" fill="#27C93F" />
+
+  <!-- UI Layout Wireframe Blocks -->
+  <rect x="104" y="160" width="80" height="232" rx="14" fill="#24242B" />
+  <rect x="200" y="160" width="208" height="104" rx="16" fill="url(#purpleGrad)" opacity="0.9" />
+  <rect x="200" y="280" width="208" height="112" rx="16" fill="url(#goldGrad)" />
+
+  <!-- Vector Pen Nib / Designer Cursor Icon -->
+  <g transform="translate(195, 135) rotate(-18) scale(1.15)">
+    <!-- Pen Nib Outline Shadow -->
+    <path d="M 120 30 L 170 120 L 115 175 L 60 120 Z" fill="#000000" opacity="0.3" transform="translate(4, 8)" />
+
+    <!-- Main Pen Nib Upper Body -->
+    <path d="M 120 30 L 170 120 L 115 175 L 60 120 Z" fill="#FFFFFF" stroke="#000000" stroke-width="14" stroke-linejoin="round" />
+
+    <!-- Pen Nib Base Segment -->
+    <path d="M 60 120 L 10 200 L 60 210 L 115 175 Z" fill="url(#goldGrad)" stroke="#000000" stroke-width="14" stroke-linejoin="round" />
+
+    <!-- Nib Hole Node -->
+    <circle cx="115" cy="110" r="14" fill="#000000" />
+
+    <!-- Vector Split Line -->
+    <line x1="120" y1="30" x2="115" y2="96" stroke="#000000" stroke-width="12" stroke-linecap="round" />
+  </g>
+
+  <!-- Designer Sparkle Icon (Top Right) -->
+  <path d="M 405 85 Q 405 125 445 125 Q 405 125 405 165 Q 405 125 365 125 Q 405 125 405 85 Z" fill="url(#goldGrad)" />
+</svg>

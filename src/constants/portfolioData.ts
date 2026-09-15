@@ -1,0 +1,238 @@
+import type { ProjectItem, GridProjectItem } from '../types/portfolio';
+
+export const NAV_LINKS = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Works', href: '#works' },
+  { label: 'Playground', href: '#playground' },
+];
+
+export const SOCIAL_LINKS = [
+  { name: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com', bg: '#2B6BE1' },
+  { name: 'Behance', icon: 'behance', href: 'https://behance.net', bg: '#2B6BE1' },
+  { name: 'WhatsApp', icon: 'whatsapp', href: 'https://wa.me/918919858386', bg: '#008941' },
+  { name: 'Instagram', icon: 'instagram', href: 'https://instagram.com', bg: '#E04E00' },
+];
+
+export const PROJECTS: ProjectItem[] = [
+  {
+    id: 1,
+    numberStr: '01',
+    title: 'Axiora Pulse',
+    description:
+      'Axiora Pulse is an AI-powered business validation platform that helps entrepreneurs evaluate ideas, understand market opportunities, gather customer insights, and make informed business decisions—all through a simple, guided digital experience.',
+    bgColor: '#000000',
+    textColor: '#FFFFFF',
+    watermarkColor: 'rgba(139, 139, 139, 0.45)',
+    tabHeaderColor: '#000000',
+    mediaSrc: '/assets/projects/axiora_pulse.png',
+    mediaAlt: 'Axiora Pulse AI Business Platform Desktop View',
+    topTabs: [
+      { id: 1, label: 'Project 1', iconColor: '#FADE71', tabColor: '#000000', textColor: '#FFFFFF' },
+    ],
+    bottomTabs: [
+      { id: 2, label: 'Project 2', iconColor: '#8A38F5', tabColor: '#F9C949', textColor: '#000000' },
+      { id: 3, label: 'Project 3', iconColor: '#E12BA1', tabColor: '#8A38F5', textColor: '#FFFFFF' },
+      { id: 4, label: 'Project 4', iconColor: '#000000', tabColor: '#E12BA2', textColor: '#FFFFFF' },
+    ],
+  },
+  {
+    id: 2,
+    numberStr: '02',
+    title: 'ibunify - CRM',
+    description:
+      'iBunify is an AI-powered CRM mobile application designed to simplify lead management, customer communication, follow-ups, and sales activities. I designed the mobile experience with a focus on intuitive navigation, clear information hierarchy, and a seamless workflow for managing leads and customer interactions.',
+    bgColor: '#F9C949',
+    textColor: '#0D0D0D',
+    watermarkColor: 'rgba(139, 139, 139, 0.45)',
+    tabHeaderColor: '#F9C949',
+    mediaSrc: '/assets/projects/ibunify_crm.png',
+    mediaAlt: 'iBunify Mobile CRM UI Design Screen',
+    topTabs: [
+      { id: 1, label: 'Project 1', iconColor: '#FADE71', tabColor: '#000000', textColor: '#FFFFFF' },
+      { id: 2, label: 'Project 2', iconColor: '#8A38F5', tabColor: '#F9C949', textColor: '#000000' },
+    ],
+    bottomTabs: [
+      { id: 3, label: 'Project 3', iconColor: '#E12BA1', tabColor: '#8A38F5', textColor: '#FFFFFF' },
+      { id: 4, label: 'Project 4', iconColor: '#000000', tabColor: '#E12BA2', textColor: '#FFFFFF' },
+    ],
+  },
+  {
+    id: 3,
+    numberStr: '03',
+    title: 'Fiable GRC',
+    description:
+      'Fiable GRC is a governance, risk, and compliance platform designed to help organizations manage risks, controls, audits, and compliance activities in one centralized system. The platform simplifies complex GRC workflows through structured processes, clear insights, and an intuitive enterprise experience.',
+    bgColor: '#8A38F5',
+    textColor: '#FFFFFF',
+    watermarkColor: 'rgba(46, 46, 46, 0.45)',
+    tabHeaderColor: '#8A38F5',
+    mediaSrc: '/assets/projects/fiable_grc.png',
+    mediaAlt: 'Fiable GRC Governance Dashboard View',
+    topTabs: [
+      { id: 1, label: 'Project 1', iconColor: '#FADE71', tabColor: '#000000', textColor: '#FFFFFF' },
+      { id: 2, label: 'Project 2', iconColor: '#8A38F5', tabColor: '#F9C949', textColor: '#000000' },
+      { id: 3, label: 'Project 3', iconColor: '#E12BA1', tabColor: '#8A38F5', textColor: '#FFFFFF' },
+    ],
+    bottomTabs: [
+      { id: 4, label: 'Project 4', iconColor: '#000000', tabColor: '#E12BA2', textColor: '#FFFFFF' },
+    ],
+  },
+  {
+    id: 4,
+    numberStr: '04',
+    title: 'Laundrix',
+    description:
+      'Laundrix is a laundry service mobile application that makes it easy for users to schedule pickups, manage laundry orders, track their service status, and make payments. I focused on creating a simple, convenient, and intuitive experience that makes the entire laundry process effortless for users.',
+    bgColor: '#E12BA2',
+    textColor: '#000000',
+    watermarkColor: 'rgba(46, 46, 46, 0.45)',
+    tabHeaderColor: '#E12BA2',
+    mediaSrc: '/assets/projects/card_preview_4.png',
+    mediaAlt: 'Laundrix Laundry Management Mobile UI',
+    topTabs: [
+      { id: 1, label: 'Project 1', iconColor: '#FADE71', tabColor: '#000000', textColor: '#FFFFFF' },
+      { id: 2, label: 'Project 2', iconColor: '#8A38F5', tabColor: '#F9C949', textColor: '#000000' },
+      { id: 3, label: 'Project 3', iconColor: '#E12BA1', tabColor: '#8A38F5', textColor: '#FFFFFF' },
+      { id: 4, label: 'Project 4', iconColor: '#000000', tabColor: '#E12BA2', textColor: '#FFFFFF' },
+    ],
+    bottomTabs: [],
+  },
+];
+
+export const GRID_PROJECTS: GridProjectItem[] = [
+  {
+    id: 1,
+    numberStr: '01',
+    tagLabel: 'Project 01',
+    tagBg: '#FADE71',
+    tagColor: '#000000',
+    title: 'Axiora Pulse',
+    description: 'An AI-powered business validation platform that helps entrepreneurs evaluate ideas, understand market opportunities, gather customer insights, and make informed business decisions-all through a simple, guided digital experience.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#000000',
+    textColor: '#FFFFFF',
+    watermarkColor: '#8B8B8B',
+    mediaSrc: '/assets/projects/axiora_pulse.png',
+    mediaAlt: 'Axiora Pulse Preview',
+  },
+  {
+    id: 2,
+    numberStr: '02',
+    tagLabel: 'Project 02',
+    tagBg: '#8A38F5',
+    tagColor: '#FFFFFF',
+    title: 'ibunify - CRM',
+    description: 'iBunify is an AI-powered CRM mobile application designed to simplify lead management, customer communication, follow-ups, and sales activities. I designed the mobile experience with a focus on intuitive navigation, clear information hierarchy, and a seamless workflow.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#F9C949',
+    textColor: '#0D0D0D',
+    watermarkColor: '#8B8B8B',
+    mediaSrc: '/assets/projects/ibunify_crm.png',
+    mediaAlt: 'ibunify CRM Preview',
+  },
+  {
+    id: 3,
+    numberStr: '03',
+    tagLabel: 'Project 03',
+    tagBg: '#E12BA1',
+    tagColor: '#FFFFFF',
+    title: 'Fiable GRC',
+    description: 'Fiable GRC is a governance, risk, and compliance platform designed to help organizations manage risks, controls, audits, and compliance activities in one centralized system. The platform simplifies complex GRC workflows through structured processes and insights.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#8A38F5',
+    textColor: '#FFFFFF',
+    watermarkColor: '#2E2E2E',
+    mediaSrc: '/assets/projects/fiable_grc.png',
+    mediaAlt: 'Fiable GRC Preview',
+  },
+  {
+    id: 4,
+    numberStr: '04',
+    tagLabel: 'Project 04',
+    tagBg: '#000000',
+    tagColor: '#FFFFFF',
+    title: 'Laundrix',
+    description: 'Laundrix is a laundry service mobile application that makes it easy for users to schedule pickups, manage laundry orders, track their service status, and make payments. I focused on creating a simple, convenient, and intuitive experience for users.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#E12BA1',
+    textColor: '#FFFFFF',
+    watermarkColor: '#2E2E2E',
+    mediaSrc: '/assets/projects/card_preview_4.png',
+    mediaAlt: 'Laundrix Preview',
+  },
+  {
+    id: 5,
+    numberStr: '05',
+    tagLabel: 'Project 05',
+    tagBg: '#7EE9B9',
+    tagColor: '#000000',
+    title: 'Pulse Analytics',
+    description: 'A dashboard system designed to surface business signals, track momentum, and help teams make faster decisions with clearer context.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#FFFFFF',
+    textColor: '#1D1D1D',
+    watermarkColor: '#8B8B8B',
+    mediaSrc: '/assets/projects/axiora_pulse.png',
+    mediaAlt: 'Pulse Analytics Preview',
+  },
+  {
+    id: 6,
+    numberStr: '06',
+    tagLabel: 'Project 06',
+    tagBg: '#8A38F5',
+    tagColor: '#FFFFFF',
+    title: 'ibunify Mobile',
+    description: 'A mobile-first CRM experience focused on lead capture, follow-up workflows, and a clean information hierarchy that keeps sales activity easy to scan.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#F9C949',
+    textColor: '#0D0D0D',
+    watermarkColor: '#8B8B8B',
+    mediaSrc: '/assets/projects/ibunify_crm.png',
+    mediaAlt: 'ibunify Mobile Preview',
+  },
+  {
+    id: 7,
+    numberStr: '07',
+    tagLabel: 'Project 07',
+    tagBg: '#E12BA1',
+    tagColor: '#FFFFFF',
+    title: 'Fiable Audit',
+    description: 'A compliance workspace designed to organize evidence, track review states, and keep audit workflows visible across distributed teams.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#8A38F5',
+    textColor: '#FFFFFF',
+    watermarkColor: '#2E2E2E',
+    mediaSrc: '/assets/projects/fiable_grc.png',
+    mediaAlt: 'Fiable Audit Preview',
+  },
+  {
+    id: 8,
+    numberStr: '08',
+    tagLabel: 'Project 08',
+    tagBg: '#000000',
+    tagColor: '#FFFFFF',
+    title: 'Laundrix Ops',
+    description: 'An operations layer for scheduling, order tracking, and service visibility-built to make the laundry experience feel simple, reliable, and easy to manage.',
+    portfolioNote: 'A neutral portfolio note: the project explores how structured validation flows can feel guided, clear, and easy to follow.',
+    bgColor: '#E12BA1',
+    textColor: '#FFFFFF',
+    watermarkColor: '#2E2E2E',
+    mediaSrc: '/assets/projects/card_preview_4.png',
+    mediaAlt: 'Laundrix Ops Preview',
+  },
+];
+
+export const ABOUT_TEXT =
+  'Transitioning from an electronic engineer in software companies and the meticulous precision of darkroom work into human-centered UX design, I leverage my technical background to untangle complex systems and bridge user needs with business strategy. Today, I specialize in crafting intuitive, scalable SaaS products that turn ambiguous technical challenges into seamless digital experiences.';
+
+export const TESTIMONIAL = {
+  quote:
+    'Working with Pavan has been a great experience. What really stands out is his ability to approach design through the lens of customer journeys and storytelling, rather than simply focusing on individual screens.',
+  company: 'Axiora Global Solutions',
+};
+
+export const CONTACT_INFO = {
+  email: 'pavan.dsgn@gmail.com',
+  phone: '+91 - 8919858386',
+};

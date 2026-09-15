@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@theme {
+  --font-jost: "Jost", sans-serif;
+  --font-aleo: "Aleo", serif;
+  --font-anek: "Anek Bangla", sans-serif;
+  --font-asap: "Asap", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-handwriting: "Caveat", cursive;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-calligraphy: "UnifrakturMaguntia", cursive;
+}
+
+:root {
+  --color-primary-yellow: #F9C949;
+  --color-accent-green: #7EE9B9;
+  --color-accent-peach: #E9C77E;
+  --color-accent-purple: #8A38F5;
+  --color-accent-pink: #E12BA1;
+  --color-accent-blue: #2B6BE1;
+  --color-border-orange: #C95E0C;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: #FFFFFF;
+  color: #1D1D1D;
+  font-family: var(--font-jost);
+  scroll-behavior: smooth;
+}
+
+/* Custom folder tab shape */
+.folder-tab-top {
+  clip-path: polygon(0% 100%, 8% 0%, 92% 0%, 100% 100%);
+}
+
+.folder-tab-bottom {
+  clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
+}
+
+/* Hide scrollbar for clean horizontal snap on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
